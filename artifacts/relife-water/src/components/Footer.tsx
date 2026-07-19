@@ -32,8 +32,13 @@ export default function Footer() {
                 Relife
               </span>
             </a>
-            <p className="text-white/60 mb-6 max-w-xs leading-relaxed">
+            <p className="text-white/60 mb-3 max-w-xs leading-relaxed">
               Premium drinking water committed to purity, health, and refreshing the community of Sambalpur, Odisha.
+            </p>
+            <p className="text-white/40 text-xs max-w-xs leading-relaxed">
+              Manufactured &amp; Packed by<br />
+              <span className="text-white/60 font-semibold">Water Zone Enterprises</span><br />
+              Sonapali, Near Deer Park, Sambalpur, Odisha
             </p>
           </div>
           

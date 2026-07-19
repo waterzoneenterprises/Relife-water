@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import ManufacturerBanner from '@/components/ManufacturerBanner';
 import Products from '@/components/Products';
 import WhyChoose from '@/components/WhyChoose';
 import Contact from '@/components/Contact';
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <ManufacturerBanner />
       <Products />
       <WhyChoose />
       <Contact />

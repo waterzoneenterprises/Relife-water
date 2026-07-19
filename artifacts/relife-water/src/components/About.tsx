@@ -31,32 +31,24 @@ export default function About() {
               <div className="rounded-[2rem] overflow-hidden shadow-2xl bg-gradient-to-br from-[#0A2F5C] to-[#0A4F8C] aspect-[4/5] relative flex flex-col justify-between">
                 {/* Animated wave SVGs inside card */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                  <svg viewBox="0 0 400 500" className="absolute bottom-0 w-full" preserveAspectRatio="none">
-                    <motion.path
-                      d="M0,350 C100,300 200,400 300,340 C370,300 400,360 400,360 L400,500 L0,500 Z"
-                      fill="rgba(0,180,228,0.18)"
-                      animate={{
-                        d: [
-                          "M0,350 C100,300 200,400 300,340 C370,300 400,360 400,360 L400,500 L0,500 Z",
-                          "M0,320 C100,380 200,280 300,360 C370,420 400,300 400,320 L400,500 L0,500 Z",
-                          "M0,350 C100,300 200,400 300,340 C370,300 400,360 400,360 L400,500 L0,500 Z",
-                        ]
-                      }}
-                      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    <motion.path
-                      d="M0,400 C80,360 180,430 280,390 C350,365 400,400 400,400 L400,500 L0,500 Z"
-                      fill="rgba(255,255,255,0.07)"
-                      animate={{
-                        d: [
-                          "M0,400 C80,360 180,430 280,390 C350,365 400,400 400,400 L400,500 L0,500 Z",
-                          "M0,370 C80,420 180,370 280,430 C350,460 400,380 400,380 L400,500 L0,500 Z",
-                          "M0,400 C80,360 180,430 280,390 C350,365 400,400 400,400 L400,500 L0,500 Z",
-                        ]
-                      }}
-                      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                  </svg>
+                  {/* Wave 1 — slow float */}
+                  <div className="absolute bottom-0 w-full animate-[waveFloat_8s_ease-in-out_infinite]">
+                    <svg viewBox="0 0 400 160" className="w-full" preserveAspectRatio="none">
+                      <path
+                        d="M0,60 C100,10 200,110 300,50 C370,10 400,70 400,70 L400,160 L0,160 Z"
+                        fill="rgba(0,180,228,0.18)"
+                      />
+                    </svg>
+                  </div>
+                  {/* Wave 2 — slightly faster */}
+                  <div className="absolute bottom-0 w-full animate-[waveFloat_6s_ease-in-out_1s_infinite]">
+                    <svg viewBox="0 0 400 120" className="w-full" preserveAspectRatio="none">
+                      <path
+                        d="M0,80 C80,40 180,100 280,70 C350,50 400,85 400,85 L400,120 L0,120 Z"
+                        fill="rgba(255,255,255,0.07)"
+                      />
+                    </svg>
+                  </div>
                   {/* Radial glow */}
                   <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-cyan-400/10 blur-[60px]" />
                 </div>
@@ -162,15 +154,22 @@ export default function About() {
               ))}
             </ul>
 
-            <div className="pt-6 border-t border-gray-100 flex items-center gap-6">
-              <div>
-                <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Quality Assured</p>
-                <p className="font-bold text-xl text-[#0A2F5C]">100% Tested</p>
+            <div className="pt-6 border-t border-gray-100 flex flex-col gap-4">
+              <div className="flex items-center gap-6">
+                <div>
+                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Quality Assured</p>
+                  <p className="font-bold text-xl text-[#0A2F5C]">100% Tested</p>
+                </div>
+                <div className="w-px h-10 bg-gray-200" />
+                <div>
+                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Customer Support</p>
+                  <p className="font-bold text-xl text-[#0A4F8C]">+91 70086 78136</p>
+                </div>
               </div>
-              <div className="w-px h-10 bg-gray-200" />
-              <div>
-                <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Customer Support</p>
-                <p className="font-bold text-xl text-[#0A4F8C]">+91 70086 78136</p>
+              <div className="rounded-2xl bg-blue-50 border border-blue-100 px-5 py-3">
+                <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Manufactured &amp; Packed by</p>
+                <p className="font-bold text-[#0A2F5C]">Water Zone Enterprises</p>
+                <p className="text-xs text-gray-500 mt-0.5">Sonapali, Near Deer Park, Sambalpur, Odisha</p>
               </div>
             </div>
           </motion.div>

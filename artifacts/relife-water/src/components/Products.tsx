@@ -130,10 +130,11 @@ function ProductPlaceholder({ product }: { product: typeof PRODUCTS[0] }) {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-3 bg-black/15 rounded-full blur-sm" />
       </div>
 
-      {/* Coming soon label */}
+      {/* Relife brand label */}
       <div className="flex flex-col items-center gap-1 mt-1">
-        <span className="text-xs font-semibold text-[#0A4F8C]/60 uppercase tracking-widest">Relife Product</span>
-        <span className="text-xs text-gray-400 font-medium">Image Coming Soon</span>
+        <span className="text-sm font-extrabold text-[#0A4F8C] tracking-widest uppercase">RELIFE</span>
+        <span className="text-[10px] text-[#0A4F8C]/50 font-semibold uppercase tracking-wider">Pure Drinking Water</span>
+        <span className="text-[10px] text-gray-400 mt-0.5">Product Image Coming Soon</span>
       </div>
     </div>
   );
