@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Relife — Pure Drinking Water"
+version = "1.0.0"
+id = "artifacts/relife-water"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21364
+
+[services.development]
+run = "pnpm --filter @workspace/relife-water run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/relife-water", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/relife-water/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21364"
+BASE_PATH = "/"
