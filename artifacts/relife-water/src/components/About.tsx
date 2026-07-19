@@ -163,7 +163,8 @@ export default function About() {
                 <div className="w-px h-10 bg-gray-200" />
                 <div>
                   <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Customer Support</p>
-                  <p className="font-bold text-xl text-[#0A4F8C]">+91 70086 78136</p>
+                  <p className="font-bold text-lg text-[#0A4F8C]">+91 70086 78136</p>
+                  <p className="font-bold text-lg text-[#0A4F8C]">+91 81178 87461</p>
                 </div>
               </div>
               <div className="rounded-2xl bg-blue-50 border border-blue-100 px-5 py-3">
