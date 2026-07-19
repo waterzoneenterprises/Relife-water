@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { MessageCircle, Droplets } from 'lucide-react';
 import img250ml from '@assets/generated_images/relife-250ml.png';
-import img1l from '@assets/generated_images/relife-1l.png';
+import img1l from '@assets/file_000000004d88720bb04e3f7c9e7af1f3_1784443054220.png';
 import img20l from '@assets/generated_images/relife-20l.png';
 import imgCamper from '@assets/Screenshot_2026-06-15-14-32-11-66_c4b2fae5edd267b2847f1b32e9bc_1784442864615.jpg';
 
