@@ -3,7 +3,7 @@ import { MessageCircle, Droplets } from 'lucide-react';
 import img250ml from '@assets/generated_images/relife-250ml.png';
 import img1l from '@assets/generated_images/relife-1l.png';
 import img20l from '@assets/generated_images/relife-20l.png';
-import imgCamper from '@assets/generated_images/relife-camper.png';
+import imgCamper from '@assets/Screenshot_2026-06-15-14-32-11-66_c4b2fae5edd267b2847f1b32e9bc_1784442864615.jpg';
 
 const PRODUCTS = [
   {
@@ -101,6 +101,10 @@ export default function Products() {
                   src={product.image}
                   alt={product.label}
                   className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  style={product.id === 'camper' ? {
+                    filter: 'brightness(1.08) contrast(1.12) saturate(1.15) drop-shadow(0 4px 16px rgba(10,79,140,0.18))',
+                    objectPosition: 'center 10%',
+                  } : undefined}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
