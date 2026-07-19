@@ -72,6 +72,7 @@ export default function Footer() {
               <p className="flex flex-col">
                 <span className="text-white/50 mb-1">Phone</span>
                 <a href="tel:+917008678136" className="hover:text-white transition-colors">+91 70086 78136</a>
+                <a href="tel:+918117887461" className="hover:text-white transition-colors">+91 81178 87461</a>
               </p>
               <p className="flex flex-col">
                 <span className="text-white/50 mb-1">Email</span>

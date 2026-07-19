@@ -18,7 +18,7 @@ export default function FloatingButtons() {
         <Phone size={24} className="group-hover:animate-pulse" />
       </motion.a>
 
-      {/* WhatsApp Button */}
+      {/* WhatsApp Button 1 */}
       <motion.a
         href="https://wa.me/917008678136"
         target="_blank"
@@ -29,7 +29,23 @@ export default function FloatingButtons() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 group"
-        aria-label="WhatsApp Us"
+        aria-label="WhatsApp +91 7008678136"
+      >
+        <MessageCircle size={26} className="group-hover:animate-pulse" />
+      </motion.a>
+
+      {/* WhatsApp Button 2 */}
+      <motion.a
+        href="https://wa.me/918117887461"
+        target="_blank"
+        rel="noreferrer"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3, delay: 1.2 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="w-14 h-14 bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-lg shadow-[#128C7E]/30 group"
+        aria-label="WhatsApp +91 8117887461"
       >
         <MessageCircle size={26} className="group-hover:animate-pulse" />
       </motion.a>
