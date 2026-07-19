@@ -24,8 +24,8 @@ const FEATURES = [
   },
   {
     icon: Award,
-    title: 'BIS Certified Quality',
-    description: 'Fully compliant with strict national quality standards and industry regulations.'
+    title: 'Strict Quality Standards',
+    description: 'Every batch is tested and meets strict national quality standards for safe drinking water.'
   },
   {
     icon: Truck,
