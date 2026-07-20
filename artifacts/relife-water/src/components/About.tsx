@@ -85,7 +85,7 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="absolute -right-6 lg:-right-12 top-24 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4 border border-border"
+                className="absolute top-4 right-4 lg:-right-12 lg:top-24 bg-white rounded-2xl shadow-xl px-4 py-3 lg:px-5 lg:py-4 flex items-center gap-3 lg:gap-4 border border-border"
               >
                 <div className="p-2 rounded-full bg-muted">
                   <Shield className="text-primary" size={24} />
@@ -101,7 +101,7 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                className="absolute -left-6 lg:-left-12 bottom-32 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4 border border-border"
+                className="absolute bottom-4 left-4 lg:-left-12 lg:bottom-32 bg-white rounded-2xl shadow-xl px-4 py-3 lg:px-5 lg:py-4 flex items-center gap-3 lg:gap-4 border border-border"
               >
                 <div className="p-2 rounded-full bg-accent/10">
                   <Award className="text-accent" size={24} />
