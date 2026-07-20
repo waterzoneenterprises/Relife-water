@@ -6,7 +6,9 @@ const NAV_LINKS = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Products', href: '#products' },
+  { name: 'Quality', href: '#quality' },
   { name: 'Why Relife', href: '#why-relife' },
+  { name: 'Distributor', href: '#distributor' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -19,7 +21,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Determine active section based on scroll position
       const sections = NAV_LINKS.map(link => link.href.substring(1));
       let current = '';
       
@@ -27,7 +28,8 @@ export default function Navbar() {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 100) {
+          // Adjust threshold to be higher on screen
+          if (rect.top <= 200) {
             current = section;
           }
         }
@@ -48,7 +50,7 @@ export default function Navbar() {
     const element = document.querySelector(href);
     if (element) {
       window.scrollTo({
-        top: element.getBoundingClientRect().top + window.scrollY - 80, // Offset for navbar
+        top: element.getBoundingClientRect().top + window.scrollY - 80,
         behavior: 'smooth'
       });
     }
@@ -56,13 +58,15 @@ export default function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-3' : 'py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'py-4' : 'py-6'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className={`glass-panel rounded-2xl flex items-center justify-between px-6 py-3 transition-all duration-500 ${
-          isScrolled ? 'shadow-lg border-white/40' : 'shadow-sm border-white/20 bg-white/40'
+        <div className={`rounded-full flex items-center justify-between px-6 py-3 transition-all duration-500 border ${
+          isScrolled 
+            ? 'glass-light shadow-xl border-white/50' 
+            : 'glass-dark bg-white/10 shadow-lg border-white/20'
         }`}>
           {/* Logo */}
           <a 
@@ -70,45 +74,52 @@ export default function Navbar() {
             onClick={(e) => scrollTo(e, '#home')}
             className="flex items-center gap-2 group"
           >
-            <div className="relative w-8 h-8 flex items-center justify-center bg-gradient-to-br from-primary to-accent text-white rounded-lg shadow-md group-hover:scale-105 transition-transform">
-              <Droplet size={18} fill="currentColor" />
+            <div className={`relative w-10 h-10 flex items-center justify-center rounded-full shadow-md group-hover:scale-105 transition-transform ${isScrolled ? 'bg-primary text-white' : 'bg-white text-primary'}`}>
+              <Droplet size={20} fill="currentColor" />
             </div>
-            <span className="font-heading font-bold text-2xl tracking-tight text-primary">
+            <span className={`font-heading font-extrabold text-2xl tracking-tight ${isScrolled ? 'text-primary' : 'text-white'}`}>
               Relife
             </span>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => scrollTo(e, link.href)}
-                className={`text-sm font-medium transition-colors relative py-1 ${
-                  activeSection === link.href.substring(1) 
-                    ? 'text-primary font-semibold' 
-                    : 'text-foreground/80 hover:text-primary'
-                }`}
-              >
-                {link.name}
-                {activeSection === link.href.substring(1) && (
-                  <motion.div 
-                    layoutId="activeSection"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  />
-                )}
-              </a>
-            ))}
+          <nav className="hidden lg:flex items-center gap-1">
+            {NAV_LINKS.map((link) => {
+              const isActive = activeSection === link.href.substring(1);
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => scrollTo(e, link.href)}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors relative ${
+                    isActive 
+                      ? (isScrolled ? 'text-primary' : 'text-white') 
+                      : (isScrolled ? 'text-muted-foreground hover:text-primary' : 'text-white/70 hover:text-white')
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <motion.div 
+                      layoutId="nav-pill"
+                      className={`absolute inset-0 rounded-full -z-10 ${isScrolled ? 'bg-muted' : 'bg-white/20'}`}
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center">
             <a 
               href="#products"
               onClick={(e) => scrollTo(e, '#products')}
-              className="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-full font-medium text-sm transition-all shadow-md shadow-primary/20 hover:shadow-lg hover:-translate-y-0.5"
+              className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
+                isScrolled 
+                  ? 'bg-primary text-white hover:bg-secondary' 
+                  : 'bg-white text-primary hover:bg-muted'
+              }`}
             >
               Order Now
             </a>
@@ -116,11 +127,11 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-foreground/80 hover:text-primary transition-colors"
+            className={`lg:hidden p-2 transition-colors ${isScrolled ? 'text-primary' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
@@ -132,28 +143,28 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-4 right-4 mt-2 origin-top"
+              className="absolute top-full left-4 right-4 mt-2 origin-top z-50"
             >
-              <div className="glass-panel rounded-2xl p-4 flex flex-col gap-2 border border-white/50 shadow-xl">
+              <div className="glass-light rounded-3xl p-4 flex flex-col gap-1 border border-white/50 shadow-2xl bg-white/90">
                 {NAV_LINKS.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
                     onClick={(e) => scrollTo(e, link.href)}
-                    className={`px-4 py-3 rounded-xl font-medium transition-colors ${
+                    className={`px-5 py-4 rounded-2xl font-bold transition-colors ${
                       activeSection === link.href.substring(1)
                         ? 'bg-primary/10 text-primary'
-                        : 'text-foreground/80 hover:bg-foreground/5 hover:text-primary'
+                        : 'text-muted-foreground hover:bg-muted hover:text-primary'
                     }`}
                   >
                     {link.name}
                   </a>
                 ))}
-                <div className="pt-2 mt-2 border-t border-foreground/10">
+                <div className="pt-4 mt-2 border-t border-border">
                   <a 
                     href="#products"
                     onClick={(e) => scrollTo(e, '#products')}
-                    className="flex justify-center bg-primary text-white px-5 py-3 rounded-xl font-medium shadow-md shadow-primary/20"
+                    className="flex justify-center bg-primary text-white px-5 py-4 rounded-2xl font-bold shadow-md"
                   >
                     Order Now
                   </a>

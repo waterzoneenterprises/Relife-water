@@ -3,18 +3,19 @@ import { motion } from 'framer-motion';
 
 export default function FloatingButtons() {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       {/* Call Button */}
       <motion.a
         href="tel:+917008678136"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3, delay: 1 }}
-        whileHover={{ scale: 1.1 }}
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 1 }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30 group"
+        className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl border border-white/20 group relative"
         aria-label="Call Us"
       >
+        <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
         <Phone size={24} className="group-hover:animate-pulse" />
       </motion.a>
 
@@ -23,15 +24,16 @@ export default function FloatingButtons() {
         href="https://wa.me/917008678136"
         target="_blank"
         rel="noreferrer"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3, delay: 1.1 }}
-        whileHover={{ scale: 1.1 }}
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 1.1 }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 group"
+        className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl border border-white/20 group relative overflow-hidden"
         aria-label="WhatsApp +91 7008678136"
       >
-        <MessageCircle size={26} className="group-hover:animate-pulse" />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-white/0 via-white/40 to-white/0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+        <MessageCircle size={26} className="relative z-10" />
       </motion.a>
 
       {/* WhatsApp Button 2 */}
@@ -39,15 +41,16 @@ export default function FloatingButtons() {
         href="https://wa.me/918117887461"
         target="_blank"
         rel="noreferrer"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3, delay: 1.2 }}
-        whileHover={{ scale: 1.1 }}
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 1.2 }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-lg shadow-[#128C7E]/30 group"
+        className="w-14 h-14 bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-xl border border-white/20 group relative overflow-hidden"
         aria-label="WhatsApp +91 8117887461"
       >
-        <MessageCircle size={26} className="group-hover:animate-pulse" />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-white/0 via-white/40 to-white/0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+        <MessageCircle size={26} className="relative z-10" />
       </motion.a>
     </div>
   );

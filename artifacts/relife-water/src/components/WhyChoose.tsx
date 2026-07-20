@@ -36,13 +36,7 @@ const FEATURES = [
 
 export default function WhyChoose() {
   return (
-    <section id="why-relife" className="py-24 relative overflow-hidden bg-primary text-white">
-      {/* Background patterns */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/50 via-transparent to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/50 via-transparent to-transparent"></div>
-      </div>
-      
+    <section id="why-relife" className="py-24 relative overflow-hidden bg-white">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.div
@@ -51,10 +45,10 @@ export default function WhyChoose() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-              Why Choose Relife?
+            <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">
+              Why Choose <span className="text-gradient">Relife?</span>
             </h2>
-            <p className="text-white/80 text-lg">
+            <p className="text-muted-foreground text-lg">
               We don't compromise on quality because we know it's about your family's health.
             </p>
           </motion.div>
@@ -70,13 +64,13 @@ export default function WhyChoose() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card rounded-3xl p-8 hover:-translate-y-1 transition-transform duration-300 border border-white/10"
+                className="glass-light rounded-[2rem] p-8 hover:-translate-y-2 transition-transform duration-300 border border-border group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 shadow-inner backdrop-blur-sm">
-                  <Icon size={28} className="text-accent" />
+                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <Icon size={28} className="text-accent group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-white/70 leading-relaxed">
+                <h3 className="text-xl font-bold text-primary mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
