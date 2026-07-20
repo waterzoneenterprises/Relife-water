@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, MapPin, Factory, Droplets, Phone, Mail } from 'lucide-react';
+import { Shield, MapPin, Factory, Phone, Mail, Users } from 'lucide-react';
 
 export default function ManufacturerBanner() {
   return (
@@ -33,7 +33,17 @@ export default function ManufacturerBanner() {
               The proud parent company behind Relife Pure Drinking Water, operating a state-of-the-art purification facility in Sambalpur, Odisha.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
+            {/* Partners */}
+            <div className="mt-8 inline-flex flex-col sm:flex-row items-center gap-4 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+              <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent">
+                <Users size={14} /> Our Partners
+              </span>
+              <span className="text-white font-semibold text-sm">Md Sabir Nagariya</span>
+              <span className="hidden sm:inline text-white/40">|</span>
+              <span className="text-white font-semibold text-sm">Md Tanvir Nagaria</span>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-6 text-sm mt-6">
               <a href="tel:+917008678136" className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors">
                 <Phone size={16} className="text-accent" />
                 +91 70086 78136
