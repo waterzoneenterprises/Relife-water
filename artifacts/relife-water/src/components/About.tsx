@@ -79,13 +79,13 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Floating badges */}
+              {/* Floating badges — desktop only */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="absolute top-4 right-4 lg:-right-12 lg:top-24 bg-white rounded-2xl shadow-xl px-4 py-3 lg:px-5 lg:py-4 flex items-center gap-3 lg:gap-4 border border-border"
+                className="hidden md:flex absolute -right-6 lg:-right-12 top-24 bg-white rounded-2xl shadow-xl px-5 py-4 items-center gap-4 border border-border"
               >
                 <div className="p-2 rounded-full bg-muted">
                   <Shield className="text-primary" size={24} />
@@ -101,7 +101,7 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                className="absolute bottom-4 left-4 lg:-left-12 lg:bottom-32 bg-white rounded-2xl shadow-xl px-4 py-3 lg:px-5 lg:py-4 flex items-center gap-3 lg:gap-4 border border-border"
+                className="hidden md:flex absolute -left-6 lg:-left-12 bottom-32 bg-white rounded-2xl shadow-xl px-5 py-4 items-center gap-4 border border-border"
               >
                 <div className="p-2 rounded-full bg-accent/10">
                   <Award className="text-accent" size={24} />
@@ -111,6 +111,28 @@ export default function About() {
                   <div className="text-sm font-bold text-primary">RO + UV + UF</div>
                 </div>
               </motion.div>
+
+              {/* Mobile badges — shown below the card */}
+              <div className="md:hidden flex justify-center gap-4 mt-6">
+                <div className="bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 border border-border">
+                  <div className="p-2 rounded-full bg-muted">
+                    <Shield className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">Purity</div>
+                    <div className="text-sm font-bold text-primary">100% Safe</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 border border-border">
+                  <div className="p-2 rounded-full bg-accent/10">
+                    <Award className="text-accent" size={22} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">Filtration</div>
+                    <div className="text-sm font-bold text-primary">RO + UV + UF</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
 
