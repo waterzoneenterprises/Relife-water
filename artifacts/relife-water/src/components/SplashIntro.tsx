@@ -79,11 +79,14 @@ export default function SplashIntro() {
 
           {/* Brand reveal */}
           <motion.div
-            className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white"
+            className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white text-center px-4"
             initial={{ opacity: 0, scale: 0.8, y: 60 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
           >
+            <div className="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-white/70 mb-4">
+              Water Zone Enterprises
+            </div>
             <div className="text-5xl md:text-7xl font-extrabold tracking-tight mb-3 drop-shadow-[0_4px_20px_rgba(0,180,228,0.5)]">
               Relife
             </div>
