@@ -137,37 +137,45 @@ export default function Hero() {
 
             {/* Floating Glass Stats Cards */}
             <motion.div
-              className="absolute left-0 lg:-left-10 top-1/4 z-30 glass-dark rounded-2xl p-4 pr-6 flex items-center gap-4"
+              className="absolute left-0 lg:-left-10 top-1/4 z-30"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              animate={{ y: [-10, 10, -10] }}
-              style={{ animationDuration: '7s', animationIterationCount: 'infinite', animationTimingFunction: 'ease-in-out' }}
             >
-              <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center border border-accent/30">
-                <ShieldCheck className="text-accent" size={24} />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-white leading-none">100%</div>
-                <div className="text-xs text-white/60 uppercase tracking-wider font-medium mt-1">Pure & Safe</div>
-              </div>
+              <motion.div
+                className="glass-dark rounded-2xl p-4 pr-6 flex items-center gap-4"
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center border border-accent/30">
+                  <ShieldCheck className="text-accent" size={24} />
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-white leading-none">100%</div>
+                  <div className="text-xs text-white/60 uppercase tracking-wider font-medium mt-1">Pure & Safe</div>
+                </div>
+              </motion.div>
             </motion.div>
 
             <motion.div
-              className="absolute right-0 lg:-right-4 bottom-1/4 z-30 glass-dark rounded-2xl p-4 pr-6 flex items-center gap-4"
+              className="absolute right-0 lg:-right-4 bottom-1/4 z-30"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-              animate={{ y: [10, -10, 10] }}
-              style={{ animationDuration: '8s', animationIterationCount: 'infinite', animationTimingFunction: 'ease-in-out' }}
             >
-              <div className="w-12 h-12 rounded-full bg-blue-400/20 flex items-center justify-center border border-blue-400/30">
-                <Activity className="text-blue-300" size={24} />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-white leading-none">7-Stage</div>
-                <div className="text-xs text-white/60 uppercase tracking-wider font-medium mt-1">RO+UV Filtered</div>
-              </div>
+              <motion.div
+                className="glass-dark rounded-2xl p-4 pr-6 flex items-center gap-4"
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="w-12 h-12 rounded-full bg-blue-400/20 flex items-center justify-center border border-blue-400/30">
+                  <Activity className="text-blue-300" size={24} />
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-white leading-none">7-Stage</div>
+                  <div className="text-xs text-white/60 uppercase tracking-wider font-medium mt-1">RO+UV Filtered</div>
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Background Glow behind bottle */}
