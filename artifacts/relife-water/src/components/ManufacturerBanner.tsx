@@ -48,6 +48,10 @@ export default function ManufacturerBanner() {
                 <Phone size={16} className="text-accent" />
                 +91 70086 78136
               </a>
+              <a href="tel:+918117887461" className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors">
+                <Phone size={16} className="text-accent" />
+                +91 81178 87461
+              </a>
               <a href="mailto:water.zone.enterprises@gmail.com" className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors">
                 <Mail size={16} className="text-accent" />
                 water.zone.enterprises@gmail.com

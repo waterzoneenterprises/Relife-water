@@ -23,6 +23,11 @@ export default function Distributor() {
     reset();
   };
 
+  const phoneNumbers = [
+    { num: '+91 70086 78136', href: 'tel:+917008678136' },
+    { num: '+91 81178 87461', href: 'tel:+918117887461' },
+  ];
+
   const benefits = [
     { icon: TrendingUp, title: "High Margins", desc: "Attractive wholesale pricing for maximum profitability." },
     { icon: Truck, title: "Priority Delivery", desc: "Dedicated logistics support to keep your stock full." },
@@ -130,6 +135,15 @@ export default function Distributor() {
                     Connect on WhatsApp
                     <ArrowRight size={18} />
                   </button>
+
+                  <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-muted-foreground">
+                    <span>Prefer a call?</span>
+                    {phoneNumbers.map((p) => (
+                      <a key={p.href} href={p.href} className="font-semibold text-primary hover:text-accent transition-colors">
+                        {p.num}
+                      </a>
+                    ))}
+                  </div>
                 </form>
               </div>
             </motion.div>

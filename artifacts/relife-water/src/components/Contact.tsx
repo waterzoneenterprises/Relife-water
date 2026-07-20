@@ -124,6 +124,12 @@ export default function Contact() {
                   <Send size={18} />
                   Send via WhatsApp
                 </button>
+
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-muted-foreground">
+                  <span>Or call us directly:</span>
+                  <a href="tel:+917008678136" className="font-semibold text-primary hover:text-accent transition-colors">+91 70086 78136</a>
+                  <a href="tel:+918117887461" className="font-semibold text-primary hover:text-accent transition-colors">+91 81178 87461</a>
+                </div>
               </form>
             </div>
           </motion.div>

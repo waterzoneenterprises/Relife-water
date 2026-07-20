@@ -164,6 +164,7 @@ export default function About() {
                 <div>
                   <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">Customer Support</p>
                   <p className="font-extrabold text-xl text-secondary">+91 70086 78136</p>
+                  <p className="font-extrabold text-xl text-secondary">+91 81178 87461</p>
                 </div>
               </div>
               

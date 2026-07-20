@@ -103,6 +103,17 @@ export default function Hero() {
                 Order via WhatsApp
               </a>
             </motion.div>
+
+            <motion.div
+              className="mt-5 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-white/70"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <a href="tel:+917008678136" className="hover:text-white transition-colors">+91 70086 78136</a>
+              <span className="hidden sm:inline">|</span>
+              <a href="tel:+918117887461" className="hover:text-white transition-colors">+91 81178 87461</a>
+            </motion.div>
           </div>
 
           {/* Right Visuals */}

@@ -107,8 +107,14 @@ export default function Products() {
                     className="w-full flex items-center justify-center gap-2 py-4 px-4 rounded-xl bg-muted hover:bg-primary hover:text-white text-primary font-bold transition-all duration-300 group/btn"
                   >
                     <MessageCircle size={18} className="group-hover/btn:scale-110 transition-transform" />
-                    Enquire Now
+                    Enquire on WhatsApp
                   </button>
+
+                  <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                    <a href="tel:+917008678136" className="hover:text-primary transition-colors">+91 70086 78136</a>
+                    <span>|</span>
+                    <a href="tel:+918117887461" className="hover:text-primary transition-colors">+91 81178 87461</a>
+                  </div>
                 </div>
               </motion.div>
             ))}
